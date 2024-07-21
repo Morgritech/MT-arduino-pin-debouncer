@@ -1,0 +1,26 @@
+###################################################
+# Syntax Colouring Map For MT-arduino-pin-debouncer
+###################################################
+
+###################################################
+# Datatypes (KEYWORD1)
+###################################################
+
+PinDebouncer	KEYWORD1
+PinState	KEYWORD1
+Status	KEYWORD1
+
+###################################################
+# Methods and Functions (KEYWORD2)
+###################################################
+
+DebouncePin	KEYWORD2
+
+###################################################
+# Constants (LITERAL1)
+###################################################
+
+kLow	LITERAL1
+kHigh	LITERAL1
+kNotStarted	LITERAL1
+kOngoing	LITERAL1
