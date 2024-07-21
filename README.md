@@ -1,5 +1,7 @@
 # MT-arduino-pin-debouncer
 
+[![Static check](https://github.com/Morgritech/MT-arduino-pin-debouncer/actions/workflows/static-check.yaml/badge.svg)](https://github.com/Morgritech/MT-arduino-pin-debouncer/actions/workflows/static-check.yaml) [![Build examples](https://github.com/Morgritech/MT-arduino-pin-debouncer/actions/workflows/build-examples.yaml/badge.svg)](https://github.com/Morgritech/MT-arduino-pin-debouncer/actions/workflows/build-examples.yaml)
+
 Pin debouncer library for the Arduino platform, to filter out noise on an input pin.
 
 This library implements a non-blocking function to detect and filter out random state changes on input pins. The library can handle detection of state changes on multiple pins.
