@@ -4,7 +4,7 @@
 // See the LICENSE file in the project root for full license details.
 
 /// @file detect_pin_state_change.ino
-/// @brief Example showing how to detect state change on a pin.
+/// @brief Example showing how to detect state change on a pin using the MT-arduino-pin-debouncer library.
 
 #include <pin_debouncer.h>
 
@@ -28,7 +28,7 @@ void setup(){
   // Initialise the input pin.
   pinMode(kPinA, INPUT);
 
-  Serial.println("...Setup complete....\n");
+  Serial.println("\n...Setup complete...\n");
 }
 
 /// @brief The continuously running function for repetitive tasks.
@@ -63,8 +63,8 @@ void loop(){
     }
   }
 
-  // Debounce the pin if it is activated/deactivated.
+  // Debounce the pin if it is activated/deactivated (e.g., button pressed/released).
   if (pin_a_status == mt::PinDebouncer::Status::kOngoing) {
-    pin_a_status = pin_a_debouncer.DebouncePin();
+    pin_a_status = pin_a_debouncer.DebouncePin(); // This must be called periodically.
   }
 }
