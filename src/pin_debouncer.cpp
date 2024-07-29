@@ -21,7 +21,7 @@ PinDebouncer::~PinDebouncer() {}
 
 PinDebouncer::Status PinDebouncer::DebouncePin() const {
   static Status status = Status::kNotStarted;
-  static uint32_t reference_debounce_time; // (ms).
+  static uint64_t reference_debounce_time; // (ms).
   static PinState previous_pin_state;
 
   PinState pin_state = static_cast<PinState>(digitalRead(gpio_pin_));
