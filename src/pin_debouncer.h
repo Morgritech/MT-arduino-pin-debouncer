@@ -37,7 +37,7 @@ class PinDebouncer {
   /// @brief Destroy the Pin Debouncer object.
   ~PinDebouncer();
 
-  /// @brief Debounce (filter out noise) on the input pin.
+  /// @brief Debounce (filter out noise) on the input pin. This must be called periodically.
   /// @return The status of the debounce operation.
   Status DebouncePin() const;
 
