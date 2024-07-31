@@ -11,10 +11,10 @@
 /// @brief Pin to debounce (e.g., for a push button).
 const uint8_t kPinA = 2;
 /// @brief Debounce period in milliseconds (ms) for the pin.
-const uint32_t kPinADebouncePeriod = 20;
+const uint32_t kPinADebouncePeriod_ms = 20;
 
 /// @brief The Pin Debouncer instance for the pin.
-mt::PinDebouncer pin_a_debouncer = mt::PinDebouncer(kPinA, kPinADebouncePeriod);
+mt::PinDebouncer pin_a_debouncer = mt::PinDebouncer(kPinA, kPinADebouncePeriod_ms);
 //mt::PinDebouncer pin_a_debouncer = mt::PinDebouncer(kPinA); // Default value of 70 ms is used for the debounce period.
 
 /// @brief The serial communication speed for the Arduino board.
