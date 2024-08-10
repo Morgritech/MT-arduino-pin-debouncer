@@ -35,7 +35,7 @@ void setup(){
 void loop(){
   // Variable to keep track of the debouncing operation.
   static mt::PinDebouncer::Status pin_a_status = mt::PinDebouncer::Status::kNotStarted;
-  // Variable to keep track of which pin state is being debounced.
+  // Flag to keep track of which pin state is being debounced.
   static bool pin_a_debouncing_high = false;
   // Counter to keep track of each unique state change (HIGH-LOW).
   static int counter = 0;
