@@ -17,7 +17,7 @@ const uint32_t kPinADebouncePeriod_ms = 20;
 mt::PinDebouncer pin_a_debouncer = mt::PinDebouncer(kPinA, kPinADebouncePeriod_ms);
 //mt::PinDebouncer pin_a_debouncer = mt::PinDebouncer(kPinA); // Default value of 70 ms is used for the debounce period.
 
-/// @brief The serial communication speed for the Arduino board.
+/// @brief The serial communication speed.
 const int kBaudRate = 9600;
 
 /// @brief The main application entry point for initialisation tasks.
