@@ -39,7 +39,7 @@ class PinDebouncer {
 
   /// @brief Debounce (filter out noise) on the input pin.
   /// @return The status of the debounce operation.
-  Status DebouncePin() const; ///< This must be called periodically.
+  Status DebouncePin(); ///< This must be called periodically.
 
  private:
 
@@ -47,6 +47,12 @@ class PinDebouncer {
   uint8_t gpio_pin_;
   /// @brief The period of time (ms) allowed for pin debouncing.
   uint16_t debounce_period_ms_;
+  /// @brief Reference time (ms) for the debounce operation.
+  uint64_t reference_debounce_time_ms;
+  /// @brief The status of the debounce operation.
+  Status debounce_status = Status::kNotStarted;
+  /// @brief The pin state for the previous iteration.
+  PinState previous_pin_state;
 };
 
 } // namespace mt

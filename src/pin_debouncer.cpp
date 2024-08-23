@@ -19,15 +19,11 @@ PinDebouncer::PinDebouncer(uint8_t gpio_pin, uint16_t debounce_period_ms) {
 
 PinDebouncer::~PinDebouncer() {}
 
-PinDebouncer::Status PinDebouncer::DebouncePin() const {
-  static Status status = Status::kNotStarted;
-  static uint64_t reference_debounce_time_ms; // (ms).
-  static PinState previous_pin_state;
-
+PinDebouncer::Status PinDebouncer::DebouncePin() {
   PinState pin_state = static_cast<PinState>(digitalRead(gpio_pin_));
 
-  if (status == Status::kNotStarted) {
-    status = Status::kOngoing;
+  if (debounce_status == Status::kNotStarted) {
+    debounce_status = Status::kOngoing;
     reference_debounce_time_ms = millis();
   }
   else if (pin_state != previous_pin_state) {
@@ -36,11 +32,11 @@ PinDebouncer::Status PinDebouncer::DebouncePin() const {
   }
   else if ((millis() - reference_debounce_time_ms) >= debounce_period_ms_) {
     // Finished debouncing.
-    status = Status::kNotStarted;
+    debounce_status = Status::kNotStarted;
   }
 
   previous_pin_state = pin_state;
-  return status;
+  return debounce_status;
 }
 
 } // namespace mt
