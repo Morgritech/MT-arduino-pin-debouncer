@@ -48,11 +48,11 @@ class PinDebouncer {
   /// @brief The period of time (ms) allowed for pin debouncing.
   uint16_t debounce_period_ms_;
   /// @brief Reference time (ms) for the debounce operation.
-  uint64_t reference_debounce_time_ms;
+  uint64_t reference_debounce_time_ms_;
   /// @brief The status of the debounce operation.
-  Status debounce_status = Status::kNotStarted;
+  Status debounce_status_ = Status::kNotStarted;
   /// @brief The pin state for the previous iteration.
-  PinState previous_pin_state;
+  PinState previous_pin_state_;
 };
 
 } // namespace mt

@@ -22,21 +22,21 @@ PinDebouncer::~PinDebouncer() {}
 PinDebouncer::Status PinDebouncer::DebouncePin() {
   PinState pin_state = static_cast<PinState>(digitalRead(gpio_pin_));
 
-  if (debounce_status == Status::kNotStarted) {
-    debounce_status = Status::kOngoing;
-    reference_debounce_time_ms = millis();
+  if (debounce_status_ == Status::kNotStarted) {
+    debounce_status_ = Status::kOngoing;
+    reference_debounce_time_ms_ = millis();
   }
-  else if (pin_state != previous_pin_state) {
+  else if (pin_state != previous_pin_state_) {
     // A bounce has occurred.
-    reference_debounce_time_ms = millis();
+    reference_debounce_time_ms_ = millis();
   }
-  else if ((millis() - reference_debounce_time_ms) >= debounce_period_ms_) {
+  else if ((millis() - reference_debounce_time_ms_) >= debounce_period_ms_) {
     // Finished debouncing.
-    debounce_status = Status::kNotStarted;
+    debounce_status_ = Status::kNotStarted;
   }
 
-  previous_pin_state = pin_state;
-  return debounce_status;
+  previous_pin_state_ = pin_state;
+  return debounce_status_;
 }
 
 } // namespace mt
