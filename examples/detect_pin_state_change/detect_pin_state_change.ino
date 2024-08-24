@@ -28,7 +28,7 @@ void setup(){
   // Initialise the input pin.
   pinMode(kPinA, INPUT);
 
-  Serial.println("\n...Setup complete...\n");
+  Serial.println(F("\n...Setup complete...\n"));
 }
 
 /// @brief The continuously running function for repetitive tasks.
@@ -48,7 +48,7 @@ void loop(){
       counter++;
       pin_a_debouncing_high = true;
       pin_a_status = mt::PinDebouncer::Status::kOngoing;
-      Serial.print("Pin state is HIGH ");
+      Serial.print(F("Pin state is HIGH "));
       Serial.println(counter);
     }
   }
@@ -58,7 +58,7 @@ void loop(){
       // Pin deactivated (e.g., button has been released).
       pin_a_debouncing_high = false;
       pin_a_status = mt::PinDebouncer::Status::kOngoing;
-      Serial.print("Pin state is LOW ");
+      Serial.print(F("Pin state is LOW "));
       Serial.println(counter);
     }
   }
