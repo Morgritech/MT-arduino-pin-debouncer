@@ -6,7 +6,7 @@ Pin debouncer library for the Arduino platform, to filter out noise on an input 
 
 This library implements a non-blocking function to detect and filter out random state changes on input pins. The library can handle detection of state changes on multiple pins.
 
-See the "examples" folder for how to get started on using the library to detect state changes on a pin.
+See the [examples](examples) folder for how to get started on using the library to detect state changes on a pin.
 
 An ideal use-case for the library would be to incorporate it into other libraries where pin debouncing is required, such as the [MT-arduino-momentary-button](https://github.com/Morgritech/MT-arduino-momentary-button) library.
 
