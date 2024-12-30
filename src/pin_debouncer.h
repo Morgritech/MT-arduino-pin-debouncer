@@ -32,14 +32,14 @@ class PinDebouncer {
   /// @brief Construct a Pin Debouncer object.
   /// @param gpio_pin The GPIO input pin to debounce.
   /// @param debounce_period_ms The period of time (ms) allowed for pin debouncing.
-  explicit PinDebouncer(uint8_t gpio_pin, uint16_t debounce_period_ms = 70);
+  explicit PinDebouncer(uint16_t gpio_pin, uint16_t debounce_period_ms = 70);
 
   /// @brief Destroy the Pin Debouncer object.
   ~PinDebouncer();
 
   /// @brief Debounce (filter out noise) on the input pin.
   /// @return The status of the debounce operation.
-  Status DebouncePin(); ///< This must be called periodically.
+  Status DebouncePin(); ///< This must be called repeatedly.
 
  private:
 

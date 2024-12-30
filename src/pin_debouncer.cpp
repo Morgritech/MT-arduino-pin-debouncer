@@ -12,7 +12,7 @@
 
 namespace mt {
 
-PinDebouncer::PinDebouncer(uint8_t gpio_pin, uint16_t debounce_period_ms) {
+PinDebouncer::PinDebouncer(uint16_t gpio_pin, uint16_t debounce_period_ms) {
   gpio_pin_ = gpio_pin;
   debounce_period_ms_ = debounce_period_ms; // (ms).
 }
