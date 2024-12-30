@@ -15,7 +15,7 @@ const uint32_t kPinADebouncePeriod_ms = 20;
 
 /// @brief The Pin Debouncer instance for the pin.
 mt::PinDebouncer pin_a_debouncer = mt::PinDebouncer(kPinA, kPinADebouncePeriod_ms);
-//mt::PinDebouncer pin_a_debouncer = mt::PinDebouncer(kPinA); // Default value of 70 ms is used for the debounce period.
+//mt::PinDebouncer pin_a_debouncer = mt::PinDebouncer(kPinA); // Default values: debounce period = 70 ms.
 
 /// @brief The serial communication speed.
 const int kBaudRate = 9600;
@@ -65,6 +65,6 @@ void loop(){
 
   // Debounce the pin if it is activated/deactivated (e.g., button pressed/released).
   if (pin_a_status == mt::PinDebouncer::Status::kOngoing) {
-    pin_a_status = pin_a_debouncer.DebouncePin(); // This must be called periodically.
+    pin_a_status = pin_a_debouncer.DebouncePin(); // This must be called repeatedly.
   }
 }

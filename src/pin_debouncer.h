@@ -39,7 +39,7 @@ class PinDebouncer {
 
   /// @brief Debounce (filter out noise) on the input pin.
   /// @return The status of the debounce operation.
-  Status DebouncePin(); ///< This must be called periodically.
+  Status DebouncePin(); ///< This must be called repeatedly.
 
  private:
 
