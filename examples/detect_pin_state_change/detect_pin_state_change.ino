@@ -14,8 +14,8 @@ const uint8_t kPinA = 2;
 const uint32_t kPinADebouncePeriod_ms = 20;
 
 /// @brief The Pin Debouncer instance for the pin.
-mt::PinDebouncer pin_a_debouncer = mt::PinDebouncer(kPinA, kPinADebouncePeriod_ms);
-//mt::PinDebouncer pin_a_debouncer = mt::PinDebouncer(kPinA); // Default values: debounce period = 70 ms.
+auto pin_a_debouncer = mt::PinDebouncer(kPinA, kPinADebouncePeriod_ms);
+//auto pin_a_debouncer = mt::PinDebouncer(kPinA); // Default values: debounce period = 70 ms.
 
 /// @brief The serial communication speed.
 const int kBaudRate = 9600;
@@ -34,7 +34,7 @@ void setup(){
 /// @brief The continuously running function for repetitive tasks.
 void loop(){
   // Variable to keep track of the debouncing operation.
-  static mt::PinDebouncer::Status pin_a_status = mt::PinDebouncer::Status::kNotStarted;
+  static auto pin_a_status = mt::PinDebouncer::Status::kNotStarted;
   // Flag to keep track of which pin state is being debounced.
   static bool pin_a_debouncing_high = false;
   // Counter to keep track of each unique state change (HIGH-LOW).
