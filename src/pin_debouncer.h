@@ -18,13 +18,13 @@ class PinDebouncer {
  public:
 
   /// @brief Enum of GPIO pin states.
-  enum class PinState {
+  enum class PinState : uint8_t {
     kLow = 0,
     kHigh,
   };
 
   /// @brief Enum of debounce status.
-  enum class Status {
+  enum class Status : uint8_t {
     kNotStarted = 0,
     kOngoing,
   };
