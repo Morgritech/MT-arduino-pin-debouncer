@@ -9,16 +9,16 @@
 #include <pin_debouncer.h>
 
 /// @brief Pin to debounce (e.g., for a push button).
-const uint8_t kPinA = 2;
+constexpr uint8_t kPinA = 2;
 /// @brief Debounce period in milliseconds (ms) for the pin.
-const uint32_t kPinADebouncePeriod_ms = 20;
+constexpr uint32_t kPinADebouncePeriod_ms = 20;
 
 /// @brief The Pin Debouncer instance for the pin.
 auto pin_a_debouncer = mt::PinDebouncer(kPinA, kPinADebouncePeriod_ms);
 //auto pin_a_debouncer = mt::PinDebouncer(kPinA); // Default values: debounce period = 70 ms.
 
 /// @brief The serial communication speed.
-const int kBaudRate = 9600;
+constexpr int kBaudRate = 9600;
 
 /// @brief The main application entry point for initialisation tasks.
 void setup(){
