@@ -14,8 +14,8 @@ constexpr uint8_t kPinA = 2;
 constexpr uint32_t kPinADebouncePeriod_ms = 20;
 
 /// @brief The Pin Debouncer instance for the pin.
-auto pin_a_debouncer = mt::PinDebouncer(kPinA, kPinADebouncePeriod_ms);
-//auto pin_a_debouncer = mt::PinDebouncer(kPinA); // Default values: debounce period = 70 ms.
+mt::PinDebouncer pin_a_debouncer{kPinA, kPinADebouncePeriod_ms};
+//mt::PinDebouncer pin_a_debouncer{kPinA}; // Default values: debounce period = 70 ms.
 
 /// @brief The serial communication speed.
 constexpr int kBaudRate = 9600;
